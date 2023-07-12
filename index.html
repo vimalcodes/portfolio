@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+  /* Base Styling */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background: #f0f0f0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h1{
+    color: #fffffc;
+    margin: 16px 10px;
+    font-weight: 800;
+}
+
+h3{
+    margin: 8px 5px;
+    font-weight: 800;
+}
+
+p{
+    margin: 16px 10px;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+/* Navigation */
+header{
+    line-height: 100px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+}
+
+nav ul li{
+    display: inline;
+    padding: 0 16px;
+}
+
+nav ul li a{
+    color: white;
+}
+
+.mobile{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+@media(max-width: 768px){
+    nav{
+        position: static;
+    }
+    nav ul{
+        display: none;
+        width: 100%;
+        background-color: grey;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        height: 40vh;
+        text-align: center;
+    }
+    nav ul li{
+        display: block;
+    }
+    nav ul li a{
+        color: #fffffc;
+    }
+    a.mobile{
+        color: black;
+        display: block;
+        font-size: 32px;
+    }
+}
+
+/* Aside */
+aside{
+    padding: 64px;
+}
+
+aside.comments,.archives{
+    margin-top: 64px;
+}
+
+/* Blog */
+.blog-post h1{
+    color: black;
+}
+
+.blog-post a{
+    color: #0077cc;
+}
+
+.blog-post{
+    padding: 32px;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 100px auto 100px;
+    height: 100vh;
+    width: 70%;
+    margin: 0 auto;
+
+}
+
+header{
+    background-color: #0077cc;
+    grid-column-start: span 3;
+}
+
+aside{
+    background-color: orange;
+    grid-column-start: span 1;
+}
+
+main{
+    background-color: tomato;
+    grid-column-start: span 2;
+}
+
+footer{
+    background-color: grey;
+    grid-column-start: span 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:768px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px auto auto 100px;
+        width: 100%;
+    }
+    header,aside,main,footer{
+        grid-column-start: span 1;
+    }
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+          <nav>
+            <div class="logo">
+                <h2>PCS Blog</h2>
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <a href="#" class="mobile">&#9776;</a>
+          </nav>
+        </header>
+        <aside>
+          <div class="post">
+            <h1>Recent Post</h1>
+            <ul>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet consectetur.</a></li>
+                <li><a href="">Lorem ipsum.</a></li>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+            </ul>
+          </div>
+          <div class="comments">
+            <h1>Recent Comments</h1>
+            <ul>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet consectetur.</a></li>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem, ipsum.</a></li>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            </ul>
+          </div>
+          <div class="archives">
+            <h1>Archives</h1>
+            <ul>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet consectetur.</a></li>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem, ipsum.</a></li>
+                <li><a href="">Lorem ipsum dolor sit.</a></li>
+                <li><a href="">Lorem ipsum dolor sit amet.</a></li>
+            </ul>
+          </div>
+        </aside>
+        <main>
+          <div class="blog-post">
+            <div class="meta">
+                <h1>DESERT</h1>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                <small>By <a href="">Admin</a> on Sept 3, 2021</small>
+            </div>
+            <div class="post">
+                <img src="images/2x logo.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, adipisci. <a href="#">...</a></p>
+            </div>
+          </div>
+
+          <div class="blog-post">
+            <div class="meta">
+                <h1>SEA BEACH</h1>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                <small>By <a href="">Admin</a> on Sept 3, 2021</small>
+            </div>
+            <div class="post">
+                <img src="images/2x logo.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, adipisci. <a href="#">...</a></p>
+            </div>
+          </div>
+
+          <div class="blog-post">
+            <div class="meta">
+                <h1>MOUNTAIN</h1>
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                <small>By <a href="">Admin</a> on Sept 3, 2021</small>
+            </div>
+            <div class="post">
+                <img src="images/2x logo.png" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, adipisci. <a href="#">...</a></p>
+            </div>
+          </div>
+        </main>
+        <footer>
+          <h4>PCSBlog &copy;2001-2021</h4>
+        </footer>
+      </div>
+
+      <script src="app.js"></script>
+</body>
+</html>
