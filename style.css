@@ -1,163 +1,76 @@
-  /* Base Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  margin: 0;
+  font-family: "Poppins";
+  background: #f5f5f5;
 }
 
-body{
-    font-family: 'Courier New', Courier, monospace;
-    background: #f0f0f0;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+header {
+  padding: 20px 40px;
+  background: white;
+  align-items: center;
+}
+header h1 {
+  grid-column: span 6;
+}
+header nav {
+  grid-column: 7 / span 6;
+  justify-self: end;
+}
+header nav a {
+  color: #333;
+  margin-left: 10px;
+  text-decoration: none;
+}
+main {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+main img {
+  grid-column: span 6;
+  width: 100%;
+  border-radius: 6px;
+}
+main .welcome {
+  grid-column: 8 / span 5;
 }
 
-ul{
-    list-style-type: none;
+main > h2 {
+    grid-column: span 12;
+    text-align: center;
+    font-size: 1.5em;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+main .card {
+    grid-column: span 4;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
 }
 
-h1{
-    color: #fffffc;
-    margin: 16px 10px;
-    font-weight: 800;
-}
+/* Responsive */
 
-h3{
-    margin: 8px 5px;
-    font-weight: 800;
-}
-
-p{
-    margin: 16px 10px;
-    line-height: 1.75;
-    font-weight: 400;
-}
-
-/* Navigation */
-header{
-    line-height: 100px;
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-    margin: 0 auto;
-}
-
-nav ul li{
-    display: inline;
-    padding: 0 16px;
-}
-
-nav ul li a{
-    color: white;
-}
-
-.mobile{
-    display: none;
-}
-
-.show{
-    display: block;
-}
-
-@media(max-width: 768px){
-    nav{
-        position: static;
+@media screen and (max-width:960px){
+    main img {
+        grid-column: 2 / span 10;
     }
-    nav ul{
-        display: none;
-        width: 100%;
-        background-color: grey;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        right: 0;
-        height: 40vh;
+
+    main .welcome{
+        grid-column: 3 / span 8;
         text-align: center;
     }
-    nav ul li{
-        display: block;
+
+    main .card {
+        grid-column: 3 / span 8;
     }
-    nav ul li a{
-        color: #fffffc;
-    }
-    a.mobile{
-        color: black;
-        display: block;
-        font-size: 32px;
-    }
-}
-
-/* Aside */
-aside{
-    padding: 64px;
-}
-
-aside.comments,.archives{
-    margin-top: 64px;
-}
-
-/* Blog */
-.blog-post h1{
-    color: black;
-}
-
-.blog-post a{
-    color: #0077cc;
-}
-
-.blog-post{
-    padding: 32px;
-}
 
 
-.container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 100px auto 100px;
-    height: 100vh;
-    width: 70%;
-    margin: 0 auto;
-
-}
-
-header{
-    background-color: #0077cc;
-    grid-column-start: span 3;
-}
-
-aside{
-    background-color: orange;
-    grid-column-start: span 1;
-}
-
-main{
-    background-color: tomato;
-    grid-column-start: span 2;
-}
-
-footer{
-    background-color: grey;
-    grid-column-start: span 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@media (max-width:768px){
-    .container{
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px auto auto 100px;
-        width: 100%;
-    }
-    header,aside,main,footer{
-        grid-column-start: span 1;
-    }
 }
